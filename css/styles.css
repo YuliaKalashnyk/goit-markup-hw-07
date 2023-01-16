@@ -90,7 +90,138 @@ body {
     .contacts {
         display: none;
     }
+
+        /* ----MOBILE MENU----- */
+    
+        .mobile-menu {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background-color: var(--color-white);
+    
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity var(--transition-dur-func), visibility var(--transition-dur-func);
+        }
+    
+        .mobile-menu.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    
+        .mobile-menu-close {
+            position: absolute;
+            top: 40px;
+            right: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--color-soft);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            padding: 0;
+            cursor: pointer;
+            transition: border var(--transition-dur-func), background-color var(--transition-dur-func), fill var(--transition-dur-func);
+        }
+    
+        .mobile-menu-container {
+            position: relative;
+            padding: 80px 40px 40px 40px;
+        }
+    
+        .menu-link-mobile {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 1.11;
+            letter-spacing: 0.02em;
+            color: var(--color-title);
+    
+            transition: color var(--transition-dur-func)
+        }
+    
+        .menu-link-mobile:hover,
+        .menu-link-mobile:focus {
+            color: var(--color-accent);
+        }
+    
+    
+        .page-nav-mobile {
+            margin-bottom: 244px;
+        }
+    
+        .menu-item-mobile {
+            margin-bottom: 40px;
+        }
+    
+        .contact-phone-number-mobile {
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 1.11;
+            letter-spacing: 0.02em;
+            color: var(--color-accent);
+        }
+    
+        .contact-phone-mobile-item {
+            margin-bottom: 40px;
+        }
+    
+        .contact-mail-mobile {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
+            color: var(--color-text);
+        }
+    
+        .contact-mail-mobile-item {
+            margin-bottom: 48px;
+        }
+    
+    
+    
+        .social-list-mobile {
+            display: flex;
+        }
+    
+        .social-list-item-mobile {
+            display: flex;
+            justify-content: center;
+            width: 40px;
+    
+        }
+    
+    
+        .social-list-item-mobile:not(:last-child) {
+            margin-right: 56px;
+        }
+    
+        .social-icon {
+            fill: var(--color-light);
+        }
+    
+        .social-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--color-accent);
+        }
+    
+        .social-icon {
+            fill: var(--color-light);
+        }
 }
+
+
 
 .page-header-container {
     display: flex;
@@ -112,76 +243,7 @@ body {
 
 }
 
-/* ----MOBILE MENU----- */
 
-.mobile-menu {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: var(--color-white);
-
-    /* opacity: 0;
-    visibility: hidden;
-    pointer-events: none; */
-}
-
-/* .mobile-menu.is-open {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-} */
-
-
-
-.mobile-menu-close {
-    position: absolute;
-    top: 40px;
-    right: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    background-color: var(--color-soft);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    padding: 0;
-    cursor: pointer;
-    transition: border var(--transition-dur-func), background-color var(--transition-dur-func), fill var(--transition-dur-func);
-}
-
-.mobile-menu-container {
-    position: relative;
-    padding: 40px 25px;
-}
-
-
-
-/* .page-header {
-    background: var(--color-white);
-    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-} */
-
-/* .page-nav {
-    display: flex;
-    align-items: center;
-}
-
-.menu,
-.contacts {
-    display: flex;
-    align-items: center;
-}  */
-
-
-
-/* .menu-link.current {
-    color: var(--color-accent);
-    padding-bottom: 0;
-} */
 
 .logo {
     font-family: 'Raleway', sans-serif;
@@ -199,78 +261,206 @@ body {
     color: var(--color-accent);
 }
 
-/* .menu-link.current::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    margin-top: 20px;
 
-    background-color: var(--color-accent);
-    border-radius: 2px;
+/* Стили для планшета_______________ */
 
+@media screen and (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
+    .mobile-menu-open {
+        display: none;
+    }
+
+    .page-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-link.current {
+        color: var(--color-accent);
+        padding-bottom: 0;
+    }
+
+    .menu-link.current::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-top: 20px;
+    
+        background-color: var(--color-accent);
+        border-radius: 2px;
+    
+        }
+    
+    .menu-item:not(:last-child) {
+        margin-right: 40px;
+    }
+
+    .menu-link {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-title);
+        
+        padding-bottom: 24px;
+        transition: color var(--transition-dur-func)
+    }
+    
+    .menu-link:hover,
+    .menu-link:focus {
+        color: var(--color-accent);
+    }
+
+    .logo {
+        margin-right: 120px;
+    }
+
+    .contacts {
+        margin-left: auto;
+    }
+    
+    .contact-mail {
+        display: block;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-text);
+        margin-right: 40px;
+        
+        padding-bottom: 4px;
+        transition: color var(--transition-dur-func)
+    }
+    
+    .contact-mail:hover,
+    .contact-mail:focus {
+        color: var(--color-accent);
+    }
+    
+    .contact-phone-number {
+        display: block;
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-text);
+        
+        padding-bottom: 9px;
+        transition: color var(--transition-dur-func)
+    }
+    
+    .contact-phone-number:hover,
+    .contact-phone-number:focus {
+        color: var(--color-accent);
+    }
+    
 }
 
-.menu-item:not(:last-child) {
-    margin-right: 40px;
-} */
+/* Стили для десктопа_____________ */
+
+@media screen and (min-width: 1200px) {
+    .page-header {
+        background: var(--color-white);
+        box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+        padding: 0;
+    }
+
+    .page-nav {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu,
+    .contacts {
+        display: flex;
+        align-items: center;
+
+    }
+    .menu-link.current {
+        color: var(--color-accent);
+        padding-bottom: 0;
+    }
+
+    .menu-link.current::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-top: 20px;
+    
+        background-color: var(--color-accent);
+        border-radius: 2px;
+    
+    }
+    
+    .menu-item:not(:last-child) {
+        margin-right: 40px;
+    }
 
 
-
-
-/* .menu-link {
-    display: block;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: var(--color-title);
-    padding-top: 24px;
-    padding-bottom: 24px;
-    transition: color var(--transition-dur-func)
+    .menu-link {
+        display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-title);
+        padding-top: 24px;
+        padding-bottom: 24px;
+        transition: color var(--transition-dur-func)
+    }
+    
+    .menu-link:hover,
+    .menu-link:focus {
+        color: var(--color-accent);
+    }
+    
+    .contacts {
+        margin-left: auto;
+    }
+    
+    .contact-mail {
+        display: block;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-text);
+        margin-right: 40px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        transition: color var(--transition-dur-func)
+    }
+    
+    .contact-mail:hover,
+    .contact-mail:focus {
+        color: var(--color-accent);
+    }
+    
+    .contact-phone-number {
+        display: block;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: var(--color-text);
+        padding-top: 24px;
+        padding-bottom: 24px;
+        transition: color var(--transition-dur-func)
+    }
+    
+    .contact-phone-number:hover,
+    .contact-phone-number:focus {
+        color: var(--color-accent);
+    }
+    
 }
 
-.menu-link:hover,
-.menu-link:focus {
-    color: var(--color-accent);
-}
-
-.contacts {
-    margin-left: auto;
-}
-
-.contact-mail {
-    display: block;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: var(--color-text);
-    margin-right: 40px;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    transition: color var(--transition-dur-func)
-}
-
-.contact-mail:hover,
-.contact-mail:focus {
-    color: var(--color-accent);
-}
-
-.contact-phone-number {
-    display: block;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: var(--color-text);
-    padding-top: 24px;
-    padding-bottom: 24px;
-    transition: color var(--transition-dur-func)
-}
-
-.contact-phone-number:hover,
-.contact-phone-number:focus {
-    color: var(--color-accent);
-} */
 
 /* ============HERO============= */
 
