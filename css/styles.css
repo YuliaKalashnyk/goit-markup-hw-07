@@ -1746,6 +1746,7 @@ screen (min-resolution: 2dppx) (min-width: 1200px) {
 
 }
 
+
 .modal-close-btn {
     position: absolute;
     top: 24px;
