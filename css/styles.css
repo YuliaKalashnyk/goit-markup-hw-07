@@ -1738,7 +1738,6 @@ screen (min-resolution: 2dppx) (min-width: 1200px) {
     transform: translate(-50%, -50%);
     width: 408px;
     height: 576px;
-    
     background-color: #FCFCFC;
     border-radius: 4px;
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 3px rgba(0, 0, 0, 0.12);
